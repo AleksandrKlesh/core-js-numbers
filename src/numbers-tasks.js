@@ -108,24 +108,11 @@ function getLinearEquationRoot(a, b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  // const vector1x = x2 - x1;
-  // const vector1y = y2 - y1;
-  // const vector2x = x1 - x2;
-  // const vector2y = y1 - y2;
-  // const angle =
-  //   (Math.acos(x1 * x2 + y1 * y1) /
-  //     Math.sqrt((x1 ** 2 + y1 ** 2) * (x2 ** 2 + y2 ** 2))) *
-  //   (Math.PI / 180);
-  // const top = (vector1x * vector2x + vector1y * vector2y);
-  // const angle = top /
-  //   (Math.sqrt(vector1x ** 2 + vector1y ** 2) *
-  //     Math.sqrt(vector2x ** 2 + vector2y ** 2));
-  // // const angleCos = Math.cos(angle);
-  // // const angleInRadians = angle * (Math.PI / 180);
-  // return angleInRadians;
-  throw new Error('Not implemented');
-  // return angle;
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  const firstAngle = Math.atan2(y1, x1);
+  const secondAngle = Math.atan2(y2, x2);
+  const angle = secondAngle - firstAngle;
+  return Math.abs(angle);
 }
 
 /**
@@ -197,19 +184,11 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  // let digits = [...num]
-  // while (pow != 0) {
-  //   digits[pow] = 0;
-  //   if (digits[pow] < 5) {
-  //     return digits[pow] = 0;
-  //   } else {
-  //     digits[pow] = 0;
-  //     digits[pow - 1] = digits[pow - 1] - 1;
-  //   }
-  //   pow--;
-  // }
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  const poweredTen = 10 ** pow;
+  const roundNum = Math.round(num / poweredTen) * poweredTen;
+  return roundNum;
+  // throw new Error('Not implemented');
 }
 
 /**
