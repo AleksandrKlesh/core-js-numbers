@@ -188,7 +188,6 @@ function roundToPowerOfTen(num, pow) {
   const poweredTen = 10 ** pow;
   const roundNum = Math.round(num / poweredTen) * poweredTen;
   return roundNum;
-  // throw new Error('Not implemented');
 }
 
 /**
@@ -340,7 +339,6 @@ function getSumOfDigits(num) {
  *   15  => false
  */
 function isPowerOfTwo(num) {
-  // Odds and evens
   let rest = num;
   if (num === 0) {
     return false;
